@@ -1,4 +1,8 @@
-function TodoComp({todoTask,todoDate}) {
+function TodoComp({todoTask,todoDate,deleteItem}) {
+
+  const deleteThat=()=>{
+    deleteItem(todoTask)
+  }
   return (
     <div className="grid grid-cols-5 gap-1 bg-slate-50 rounded-md">
       <div className="col-span-2  p-4 flex justify-center items-center">
@@ -8,7 +12,7 @@ function TodoComp({todoTask,todoDate}) {
         <h3>{todoDate}</h3>
       </div>
       <div className="col-span-1 p-2 flex justify-center items-center">
-        <button className="btn btn-error">Delete</button>
+        <button key={`${todoTask}-${todoDate}`} className="btn btn-error" onClick={deleteThat}>Delete</button>
       </div>
     </div>
   );
