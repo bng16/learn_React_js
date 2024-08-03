@@ -11,11 +11,12 @@ function App() {
 const [todoList, setTodoList] = useState([]);
 
 const addItem=(newItem)=>{
-  setTodoList([...todoList,{taskName:newItem.todoName,dueDate:newItem.todoDate}]);
+  setTodoList([...todoList,{taskName:newItem.todoName,dueDate:newItem.todoDate, taskId:`${newItem.todoName}-${newItem.todoDate}-${todoList.length}-${Math.random()*100}`}]);
 }
 const deleteItem=(selectedItem)=>{
-  let newList=todoList.filter((item)=>item.taskName!=selectedItem)
+  let newList=todoList.filter((item)=>item.taskId!=selectedItem)
   setTodoList(newList);
+  console.log(newList);
 }
 
 

@@ -10,7 +10,7 @@ function InputArea({getItem}) {
     setTodoName(name)
   }
   const sendItem=(todoName,todoDate)=>{
-    if(todoName != "" || todoDate != "") {
+    if(todoName != "" && todoDate != "") {
       getItem({todoName,todoDate});
       setTodoName("");
       setTodoDate("");
