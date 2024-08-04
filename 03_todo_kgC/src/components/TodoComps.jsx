@@ -1,11 +1,18 @@
 import TodoComp from "./TodoComp";
 
+import { TodoItemsContext } from "../store/todo-items-store";
+import { useContext } from "react";
 
-const TodoComps=({tododata,deleteItem})=>{
+
+const TodoComps=()=>{
+  const todoContext= useContext(TodoItemsContext);
+  
+
+
   return (
     <>
 
-        {tododata.map(todo => <TodoComp todoDate={todo.dueDate} todoTask={todo.taskName} todoId={todo.taskId} deleteItem={deleteItem}/>)}
+        {todoContext.todoList.map(todo => <TodoComp todoDate={todo.dueDate} todoTask={todo.taskName} todoId={todo.taskId}/>)}
 
     </>
   );

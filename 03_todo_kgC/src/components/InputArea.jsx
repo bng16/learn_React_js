@@ -1,17 +1,27 @@
 import { useRef} from "react";
 
-function InputArea({getItem}) {
+import { TodoItemsContext } from "../store/todo-items-store";
+import { useContext } from "react";
+
+function InputArea() {
+  const todoContext= useContext(TodoItemsContext);
+
+
+
+  //! veriable to store the input from the form:===============
   const todoName=useRef('');
   const todoDate=useRef('');
 
+
+  //! function to check if input empty and callling the function from app to add the data to the list:-----------
   const sendItem=(event)=>{
     event.preventDefault()
     let newName=todoName.current.value;
     let newDate=todoDate.current.value;
 
-
     if(newName != "" && newDate != "") {
-      getItem({newName,newDate});
+      const uniqueId = `${newName}-${newDate}-${Math.random()*100}`;
+      todoContext.addItem({newName,newDate,uniqueId});
       todoDate.current.value='';
       todoName.current.value='';
     }
