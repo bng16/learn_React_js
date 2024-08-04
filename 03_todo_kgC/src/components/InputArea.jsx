@@ -1,45 +1,43 @@
-import { useState } from "react";
+import { useRef} from "react";
 
 function InputArea({getItem}) {
-  const [todoName,setTodoName]=useState('');
-  const [todoDate,setTodoDate]=useState('');
-  const getDate=(date)=>{
-    setTodoDate(date)
-  }
-  const getName=(name)=>{
-    setTodoName(name)
-  }
-  const sendItem=(todoName,todoDate)=>{
-    if(todoName != "" && todoDate != "") {
-      getItem({todoName,todoDate});
-      setTodoName("");
-      setTodoDate("");
+  const todoName=useRef('');
+  const todoDate=useRef('');
+
+  const sendItem=(event)=>{
+    event.preventDefault()
+    let newName=todoName.current.value;
+    let newDate=todoDate.current.value;
+
+
+    if(newName != "" && newDate != "") {
+      getItem({newName,newDate});
+      todoDate.current.value='';
+      todoName.current.value='';
     }
-  }
+  };
 
 
   return (
-    <div className="grid grid-cols-5 gap-1 my-7">
+    <form className="grid grid-cols-5 gap-1 my-7" onSubmit={sendItem}>
       <div className="col-span-2  p-2">
         <input
           type="text"
           placeholder="Add Todo"
+          ref={todoName}
           className="input input-bordered w-full max-w-xs"
-          value={todoName}
-          onChange={(event)=>getName(event.target.value)}
         />
       </div>
       <div className="col-span-2 p-2">
         <input type="date"
+          ref={todoDate}
           className="input input-bordered w-full max-w-xs"
-          value={todoDate}
-          onChange={(event)=>getDate(event.target.value)}
         />
       </div>
       <div className="col-span-1 p-2">
-        <button className="btn btn-accent w-20" onClick={()=>sendItem(todoName,todoDate)}>Add</button>
+        <button className="btn btn-accent w-20" type="submit">Add</button>
       </div>
-    </div>
+    </form>
   );
 }
 
