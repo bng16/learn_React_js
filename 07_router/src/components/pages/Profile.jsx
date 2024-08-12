@@ -1,6 +1,9 @@
+import { useParams } from "react-router-dom"
+
 function Profile() {
+  const { profileId } = useParams();
   return (
-    <div>Profile</div>
+    <div>Profile {profileId}</div>
   )
 }
 
