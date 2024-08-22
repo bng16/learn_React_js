@@ -41,7 +41,7 @@ function CardMain() {
         height: '70vh',
       }, 'b')
       .to(image3Ref.current, {
-        top: '150%',
+        top: '500%',
       }, 'b')
       .to(image3Ref.current, {
         top: '49%',
