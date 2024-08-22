@@ -62,19 +62,19 @@ function CardMain() {
       </div>
       <div
         ref={image1Ref}
-        className='w-[80%] h-[80vh] bg-red-200 bg-cover bg-center absolute top-[130%] left-[50%] -translate-x-1/2 -translate-y-1/2'
+        className='w-[80%] h-[80vh] bg-red-200 bg-cover bg-center absolute top-[130%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-[url("./components/02_CardStack/images/1.jpg")] rounded-xl'
         // style={{ backgroundImage: 'url(./images/1.jpg)' }}
       ></div>
 
       <div
         ref={image2Ref}
-        className='w-[80%] h-[80vh] bg-blue-200 bg-cover bg-center absolute top-[130%] left-[50%] -translate-x-1/2 -translate-y-1/2'
+        className='w-[80%] h-[80vh] bg-red-200 bg-cover bg-center absolute top-[130%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-[url("./components/02_CardStack/images/2.jpg")] rounded-xl'
         // style={{ backgroundImage: 'url(./images/2.jpg)' }}
       ></div>
 
       <div
         ref={image3Ref}
-        className='w-[80%] h-[80vh] bg-green-200 bg-cover bg-center absolute top-[130%] left-[50%] -translate-x-1/2 -translate-y-1/2'
+        className='w-[80%] h-[80vh] bg-red-200 bg-cover bg-center absolute top-[130%] left-[50%] -translate-x-1/2 -translate-y-1/2 bg-[url("./components/02_CardStack/images/3.jpg")] rounded-xl'
         // style={{ backgroundImage: 'url(./images/3.jpg)' }}
       ></div>
     </main>
