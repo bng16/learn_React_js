@@ -40,7 +40,7 @@ function OppositeScroll() {
     tl.to(goUpRef.current, {
       top: "-137%",  
     }, 'a').to(goDownRef.current, {
-      top: "0",  
+      top: "10%",  
     }, 'a');
   }, []);
 
