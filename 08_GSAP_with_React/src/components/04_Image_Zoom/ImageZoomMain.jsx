@@ -16,7 +16,7 @@ function ImageZoomMain() {
         trigger: mainRef.current,
         markers:true,
         start:'50% 40%',
-        end:"100% 40%",
+        end:"80% 40%",
         pin:true,
         scrub:2,
       }})
